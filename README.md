@@ -52,7 +52,7 @@ In order to auto-update the blacklist, copy the following code into `/etc/cron.d
 ```sh
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
 MAILTO=root
-33 23 * * *      root /usr/local/sbin/update-blacklist.sh /etc/ipset-blacklist/ipset-blacklist.conf
+*/30 * * * *  root /usr/local/sbin/update-blacklist.sh /etc/ipset-blacklist/ipset-blacklist.conf
 ```
 
 ## Check for dropped packets
