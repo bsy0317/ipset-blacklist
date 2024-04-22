@@ -40,6 +40,7 @@ to generate the `/etc/ipset-blacklist/ip-blacklist.restore`:
 # Enable blacklists
 ipset restore < /etc/ipset-blacklist/ip-blacklist.restore
 iptables -I INPUT 1 -m set --match-set blacklist src -j DROP
+iptables -I INPUT 1 -m set --match-set blacklist src -j LOG --log-prefix "[IPSET-DROP] " --log-level 7
 ```
 
 Make sure to run this snippet in a firewall script or just insert it to `/etc/rc.local`.
